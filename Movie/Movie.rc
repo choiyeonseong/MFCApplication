@@ -1,0 +1,560 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+#include "verrsrc.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어(대한민국) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "#include ""verrsrc.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#include ""res\\Movie.rc2""  // Microsoft Visual C++ 이외의 다른 도구에서 편집한 리소스입니다.\r\n"
+    "#include ""l.KOR\\afxres.rc""      // 표준 구성 요소\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Movie.ico"
+
+IDR_MovieTYPE           ICON                    "res\\MovieDoc.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "파일(&F)"
+    BEGIN
+        MENUITEM "새로 만들기(&N)\tCtrl+N",          ID_FILE_NEW
+        MENUITEM "열기(&O)...\tCtrl+O",           ID_FILE_OPEN
+        MENUITEM "저장(&S)\tCtrl+S",              ID_FILE_SAVE
+        MENUITEM "다른 이름으로 저장(&A)...",           ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "최근에 사용한 파일",                  ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "끝내기(&X)",                     ID_APP_EXIT
+    END
+    POPUP "편집(&E)"
+    BEGIN
+        MENUITEM "실행 취소(&U)\tCtrl+Z",           ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "잘라내기(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "복사(&C)\tCtrl+C",              ID_EDIT_COPY
+        MENUITEM "붙여넣기(&P)\tCtrl+V",            ID_EDIT_PASTE
+    END
+    POPUP "도움말(&H)"
+    BEGIN
+        MENUITEM "Movie 정보(&A)...",             ID_APP_ABOUT
+    END
+END
+
+IDR_POPUP MENU
+BEGIN
+    POPUP "인덱스0"
+    BEGIN
+        MENUITEM "열기...",                       ID_POPUP_OPEN
+        MENUITEM "색상...",                       ID_POPUP_COLOR
+        MENUITEM SEPARATOR
+        MENUITEM "종료...",                       ID_POPUP_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Movie 정보"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "Movie, 버전 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2021",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "확인",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_MOVIE_FORM DIALOGEX 0, 0, 320, 200
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         IDB_LION,IDC_FORM_IMAGE,"Static",SS_BITMAP,7,7,13,12
+    PUSHBUTTON      "모달다이얼로그...",IDC_FORM_MODAL,55,7,80,32
+    PUSHBUTTON      "속성 다이얼로그...",IDC_FORM_PROPERTY,55,114,80,32,BS_MULTILINE
+    LTEXT           "흥행율 :",IDC_STATIC,142,17,23,8
+    LTEXT           "현재 색상 :",IDC_STATIC,143,67,31,8
+    LTEXT           "Static",IDC_FORM_COUNT,174,17,73,15,0,WS_EX_STATICEDGE
+    CONTROL         "",IDC_FORM_COLOR,"Static",SS_ETCHEDFRAME,182,64,34,28,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "모달리스...\n\n다이얼로그",IDC_FORM_MODALESS,53,63,80,32,BS_MULTILINE
+    PUSHBUTTON      "위저드 다이얼로그...",IDC_FORM_WIZARD,166,115,80,32,BS_MULTILINE
+END
+
+IDD_DIALOG1 DIALOGEX 0, 0, 475, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "모달 다이얼로그"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         IDB_CHUN,IDC_STATIC_IMAGE,"Static",SS_BITMAP,7,7,140,129
+    EDITTEXT        IDC_EDIT1,147,6,40,14,ES_AUTOHSCROLL,WS_EX_DLGMODALFRAME | WS_EX_STATICEDGE
+    EDITTEXT        IDC_EDIT2,147,25,40,14,ES_AUTOHSCROLL,WS_EX_DLGMODALFRAME | WS_EX_STATICEDGE
+    EDITTEXT        IDC_EDIT3,147,44,40,14,ES_AUTOHSCROLL,WS_EX_DLGMODALFRAME | WS_EX_STATICEDGE
+    EDITTEXT        IDC_EDIT4,147,63,40,14,ES_AUTOHSCROLL,WS_EX_DLGMODALFRAME | WS_EX_STATICEDGE
+    PUSHBUTTON      ">>",IDC_BUTTON1,194,6,50,14
+    PUSHBUTTON      ">>",IDC_BUTTON2,194,25,50,14
+    PUSHBUTTON      ">>",IDC_BUTTON3,194,44,50,14
+    PUSHBUTTON      ">>",IDC_BUTTON4,194,63,50,14
+    LTEXT           "Static",IDC_STATIC1,254,7,53,13,0,WS_EX_STATICEDGE
+    LTEXT           "Static",IDC_STATIC2,254,26,53,13,0,WS_EX_STATICEDGE
+    LTEXT           "Static",IDC_STATIC3,254,45,53,13,0,WS_EX_STATICEDGE
+    LTEXT           "Static",IDC_STATIC4,254,64,53,13,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "ComboBox\n추가 >>",IDC_COMBO_ADD,318,7,69,22,BS_MULTILINE
+    PUSHBUTTON      "ListBox\n추가 >>",IDC_LIST_ADD,318,44,69,22,BS_MULTILINE
+    GROUPBOX        "이미지 변경",IDC_STATIC,147,90,62,79
+    CONTROL         "춘식이",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,154,108,38,10
+    CONTROL         "펭수",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,153,127,31,10
+    LTEXT           "흥행율:",IDC_STATIC,213,132,26,8
+    LTEXT           "",IDC_STATIC_COUNT,243,129,57,13,0,WS_EX_STATICEDGE
+    SCROLLBAR       IDC_SCROLLBAR1,210,146,144,11
+    LTEXT           "",IDC_STATIC_COMBO,403,7,53,13,0,WS_EX_STATICEDGE
+    COMBOBOX        IDC_COMBO1,403,23,53,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_STATIC_LIST,403,44,53,13,0,WS_EX_STATICEDGE
+    LISTBOX         IDC_LIST1,403,66,54,69,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "확인",IDOK,365,155,50,14
+    PUSHBUTTON      "취소",IDCANCEL,418,155,50,14
+END
+
+IDD_MODALESS DIALOGEX 0, 0, 310, 175
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CLIENTEDGE
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "--->>확인",IDOK,198,154,50,14
+    GROUPBOX        "픽셀 정보",IDC_STATIC,92,17,201,128
+    EDITTEXT        IDC_CORD_X,145,38,40,14,ES_AUTOHSCROLL,WS_EX_DLGMODALFRAME | WS_EX_STATICEDGE
+    EDITTEXT        IDC_CORD_Y,233,38,40,14,ES_AUTOHSCROLL,WS_EX_DLGMODALFRAME | WS_EX_STATICEDGE
+    LTEXT           "X좌표 :",IDC_STATIC,117,41,24,10
+    LTEXT           "Y좌표 :",IDC_STATIC,204,41,24,8
+    LTEXT           "Red :",IDC_STATIC,102,73,24,10
+    CONTROL         "",IDC_RED_VALUE,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,140,73,40,10,WS_EX_STATICEDGE
+    LTEXT           "Green :",IDC_STATIC,102,89,24,10
+    CONTROL         "",IDC_GREEN_VALUE,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,140,89,40,10,WS_EX_STATICEDGE
+    LTEXT           "Blue :",IDC_STATIC,102,108,24,10
+    CONTROL         "",IDC_BLUE_VALUE,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,140,110,40,10,WS_EX_STATICEDGE
+    CONTROL         "",IDC_STATIC_COLOR,"Static",SS_ETCHEDFRAME,215,78,59,45,WS_EX_DLGMODALFRAME
+    CONTROL         IDB_CHUN,IDC_STATIC,"Static",SS_BITMAP,7,7,457,246
+END
+
+IDD_PROPPAGE1 DIALOGEX 0, 0, 236, 102
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "미리보기"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT1,7,62,40,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,46,62,10,14
+    CONTROL         "",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,7,81,140,14
+    CONTROL         "",IDC_ANIMATE1,"SysAnimate32",ACS_AUTOPLAY | WS_BORDER | WS_TABSTOP,157,35,72,60,WS_EX_TRANSPARENT
+    LTEXT           "애니메이션/스핀/프로그레스 컨트롤",IDC_STATIC,57,17,95,8
+END
+
+IDD_PROPPAGE2 DIALOGEX 0, 0, 268, 127
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "화면설정"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_SLIDER1,"msctls_trackbar32",TBS_NOTICKS | WS_TABSTOP,59,22,100,15
+    CONTROL         "",IDC_SLIDER2,"msctls_trackbar32",TBS_NOTICKS | TBS_ENABLESELRANGE | WS_TABSTOP,59,49,100,15
+    CONTROL         "",IDC_SLIDER3,"msctls_trackbar32",TBS_NOTICKS | WS_TABSTOP,59,76,100,15
+    LTEXT           "Red :",IDC_STATIC,37,26,18,8
+    LTEXT           "Green :",IDC_STATIC,31,50,24,8
+    LTEXT           "Blue :",IDC_STATIC,35,79,19,8
+    LTEXT           "슬라이더 컨트롤",IDC_STATIC,85,7,43,8
+    LTEXT           "Static",IDC_RED,171,24,19,8,0,WS_EX_STATICEDGE
+    LTEXT           "Static",IDC_GREEN,171,50,19,8,0,WS_EX_STATICEDGE
+    LTEXT           "Static",IDC_BLUE,171,76,19,8,0,WS_EX_STATICEDGE
+    CONTROL         "",IDC_COLOR_SHOW,"Static",SS_ETCHEDFRAME,211,35,38,42,WS_EX_DLGMODALFRAME
+END
+
+IDD_PROPPAGE3 DIALOGEX 0, 0, 222, 141
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "영화 분류"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "트리/리스트 컨트롤",IDC_STATIC,80,7,52,8
+    LTEXT           "",IDC_SELECT_TREE,7,26,85,8,0,WS_EX_STATICEDGE
+    LTEXT           "",IDC_SELECT_LIST,130,26,85,8,0,WS_EX_STATICEDGE
+    CONTROL         "",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_HSCROLL | WS_TABSTOP,7,39,85,82
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,130,39,85,82
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "TODO: <회사 이름>"
+            VALUE "FileDescription", "Movie"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "Movie.exe"
+            VALUE "LegalCopyright", "TODO: (c) <회사 이름>.  All rights reserved."
+            VALUE "OriginalFilename", "Movie.exe"
+            VALUE "ProductName", "TODO: <제품 이름>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_MOVIE_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 468
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_MODALESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 303
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 168
+    END
+
+    IDD_PROPPAGE1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 229
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 95
+    END
+
+    IDD_PROPPAGE2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 261
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_PROPPAGE3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 134
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BATGIRL             BITMAP                  "C:\\Users\\netid\\Desktop\\peng2.bmp"
+
+IDB_CHUN                BITMAP                  "C:\\Users\\netid\\Desktop\\chunsik.bmp"
+
+IDB_LION                BITMAP                  "C:\\Users\\netid\\Desktop\\Lion.bmp"
+
+IDB_LIST                BITMAP                  "c:\\users\\netid\\desktop\\bitmap1.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_DIALOG1 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_MOVIE_FORM AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_MODALESS AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_PROPPAGE1 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_PROPPAGE2 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_PROPPAGE3 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE를 초기화할 수 없습니다. OLE 라이브러리 버전이 올바른지 확인하십시오."
+END
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "Movie\n\nMovie\n\n\nMovie.Document\nMovie.Document"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "Movie"
+    AFX_IDS_IDLEMESSAGE     "준비"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "새 문서를 만듭니다.\n새로 만들기"
+    ID_FILE_OPEN            "기존 문서를 엽니다.\n열기"
+    ID_FILE_CLOSE           "활성 문서를 닫습니다.\n닫기"
+    ID_FILE_SAVE            "활성 문서를 저장합니다.\n저장"
+    ID_FILE_SAVE_AS         "활성 문서를 새 이름으로 저장합니다.\n다른 이름으로 저장"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "프로그램 정보, 버전 번호 및 저작권을 표시합니다.\n정보"
+    ID_APP_EXIT             "문서를 저장할지를 묻고 응용 프로그램을 끝냅니다.\n끝내기"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE2       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE3       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE4       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE5       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE6       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE7       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE8       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE9       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE10      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE11      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE12      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE13      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE14      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE15      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE16      "현재 문서를 엽니다."
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "다음 창으로 전환합니다.\n다음 창"
+    ID_PREV_PANE            "이전 창으로 전환합니다.\n이전 창"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_SPLIT         "활성 창을 여러 개의 창으로 분할합니다.\n분할"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "선택 영역을 지웁니다.\n지우기"
+    ID_EDIT_CLEAR_ALL       "모두 지웁니다.\n모두 지우기"
+    ID_EDIT_COPY            "선택 영역을 복사하여 클립보드에 넣습니다.\n복사"
+    ID_EDIT_CUT             "선택 영역을 잘라내어 클립보드에 넣습니다.\n잘라내기"
+    ID_EDIT_FIND            "지정한 텍스트를 찾습니다.\n찾기"
+    ID_EDIT_PASTE           "클립보드 내용을 삽입합니다.\n붙여넣기"
+    ID_EDIT_REPEAT          "마지막 작업을 반복합니다.\n반복"
+    ID_EDIT_REPLACE         "특정 텍스트를 다른 텍스트로 바꿉니다.\n바꾸기"
+    ID_EDIT_SELECT_ALL      "전체 문서를 선택합니다.\n모두 선택"
+    ID_EDIT_UNDO            "마지막 작업 실행을 취소합니다.\n실행 취소"
+    ID_EDIT_REDO            "이전에 실행 취소된 작업을 다시 실행합니다.\n다시 실행"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "창 크기를 변경합니다."
+    AFX_IDS_SCMOVE          "창 위치를 변경합니다."
+    AFX_IDS_SCMINIMIZE      "창을 아이콘으로 축소합니다."
+    AFX_IDS_SCMAXIMIZE      "창을 전체 화면 크기로 확대합니다."
+    AFX_IDS_SCNEXTWINDOW    "다음 문서 창으로 전환합니다."
+    AFX_IDS_SCPREVWINDOW    "이전 문서 창으로 전환합니다."
+    AFX_IDS_SCCLOSE         "문서를 저장할 것인지 확인하고 활성 창을 닫습니다."
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "창을 보통 크기로 복원합니다."
+    AFX_IDS_SCTASKLIST      "작업 목록을 활성화합니다."
+END
+
+#endif    // 한국어(대한민국) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE 18, 1
+#include "res\Movie.rc2"  // Microsoft Visual C++ 이외의 다른 도구에서 편집한 리소스입니다.
+#include "l.KOR\afxres.rc"      // 표준 구성 요소
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
